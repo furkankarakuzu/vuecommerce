@@ -6,6 +6,14 @@ export default {
       default: () => [],
     },
   },
+  methods: {
+    addToCart(product) {
+      this.$store.dispatch("addToCart", product);
+    },
+    setProduct(product) {
+      this.$store.dispatch("setProduct", product);
+    },
+  },
 };
 </script>
 
@@ -28,12 +36,20 @@ export default {
     <div class="card-footer">
       <div class="row">
         <div class="col-sm-6">
-          <Button outline="success">See Details</Button>
+          <Button
+            outline="success"
+            dataBsTarget="#product"
+            @click="setProduct(product)"
+            >See Details</Button
+          >
         </div>
         <div class="col-sm-6">
-          <Button outline="primary">Add to Cart</Button>
+          <Button outline="primary" @click="addToCart(product)"
+            >Add to Cart</Button
+          >
         </div>
       </div>
     </div>
+    <Modal target="product" />
   </div>
 </template>

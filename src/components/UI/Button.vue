@@ -9,6 +9,15 @@ export default {
       type: String,
       default: "",
     },
+    dataBsTarget: {
+      type: String,
+      default: "",
+    },
+  },
+  methods: {
+    clickCheck() {
+      this.$emit("click");
+    },
   },
 };
 </script>
@@ -16,6 +25,9 @@ export default {
 <template>
   <button
     class="btn"
+    :data-bs-target="dataBsTarget"
+    data-bs-toggle="modal"
+    @click="clickCheck"
     :class="[
       outline ? `btn-outline-${outline}` : '',
       fontSize ? `fs-${fontSize}` : '',

@@ -51,7 +51,7 @@ export default {
                 :src="product.src"
                 class="d-block w-75 mx-auto"
                 width="200"
-                height="200"
+                height="250"
                 :alt="product.title"
               />
             </div>

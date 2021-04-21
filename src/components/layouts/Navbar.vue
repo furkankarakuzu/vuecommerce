@@ -24,6 +24,11 @@ export default {
       ],
     };
   },
+  computed: {
+    cartLength() {
+      return this.$store.state.cart.length;
+    },
+  },
 };
 </script>
 
@@ -86,7 +91,7 @@ export default {
             data-bs-toggle="modal"
             data-bs-target="#cart"
           >
-            <i class="far fa-shopping-cart"></i> <b>2</b>
+            <i class="far fa-shopping-cart"></i> <b> {{ cartLength }} </b>
           </button>
         </div>
         <Modal target="cart" />
